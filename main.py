@@ -32,7 +32,7 @@ for i in range (2,1001):
     print(i)
     break
 
-
+print(1)
 # r = '12345678'
 
 # r = r[::2]
