@@ -18,7 +18,7 @@
 # s = '10101011'
 # s = s[1::2]
 # s=s.count('1')
-
+print(1)
 
 for i in range (2,1001):
   r=bin(i)[2:]
