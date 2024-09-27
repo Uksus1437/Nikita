@@ -1,7 +1,18 @@
-print(bin(122)[2:].zfill(8) + '.' + bin(159)[2:].zfill(8) + '.' + bin(136)[2:].zfill(8) + '.' + bin(144)[2:].zfill(8))
-print(bin(255)[2:].zfill(8) + '.' + bin(255)[2:].zfill(8) + '.' + bin(255)[2:].zfill(8) + '.' + bin(248)[2:].zfill(8))
-# print(int ('11000000', 2))
+'''При каком наибольшем целом A найдутся такие целые неотрицательные x и y, что выражение
 
-# print(bin(112)[2:].zfill(8))
+(x + 2y > 48)V(y > x)V(x + 3y < A)
 
-# print(bin(32)[2:].zfill(8))
+будет ложным?
+
+'''
+
+def f(a):                           
+    for x in range(1, 100):         
+        for y in range(1, 100):     
+            if ( (x + 2*y > 48) or (y > x) or (x + 3*y < a))   == 0:
+                return 0
+    return 1
+
+for a in range(1, 1000):
+    if f(a) == 0:
+        print(a)
