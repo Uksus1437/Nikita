@@ -14,9 +14,9 @@ f(3) = 0
 '''
 
 
-def f(a):                           
-    for x in range(1, 100):         
-        for y in range(1, 100):     
+def f(a):
+    for x in range(1, 100):
+        for y in range(1, 100):
             if ( ((x <= 9) <= (x*x <= a)) and ((y*y <= a) <= (y <= 9)) ) == 0:
                 return 0
     return 1

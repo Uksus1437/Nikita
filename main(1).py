@@ -1,48 +1,19 @@
-def to_ternary(n):
-    """Преобразует число n в троичную систему счисления."""
-    if n == 0:
-        return '0'
-    digits = []
-    while n:
-        digits.append(str(n % 3))
-        n //= 3
-    return ''.join(digits[::-1])
+'''Алгоритм вычисления функции F (n) задан следующими соотношениями:
+F(n) = n*2 при n <= 10
+F(n) = F(n - 3) - F(n - 9) • 2, если n чётно и n > 10
+F(n) = F(n - 2) • 2 - F(n - 7), если n нечётно и n> 10
+Определите сумму цифр результата для F (3063).'''
 
-def replace_digits(ternary):
-    """Заменяет цифры в троичной записи по заданному правилу."""
-    return ''.join('2' if digit == '1' else '0' if digit == '2' else '1' for digit in ternary)
 
-def remove_leading_zeros(s):
-    """Удаляет незнаечащие нули из строки."""
-    return s.lstrip('0')
+s = [0]*3064
 
-def reverse_string(s):
-    """Переворачивает строку."""
-    return s[::-1]
+for n in range(0, 3064):
+    if n <= 10:
+        s[n] = n*2
+    elif n%2 == 0:
+        s[n] = s[n-3] - s[n-9] * 2
+    else:
+        s[n] = s[n-2]*2 - s[n-7]
 
-def sum_of_digits(ternary):
-    """Суммирует цифры в троичной записи."""
-    return sum(int(digit) for digit in ternary)
+print(sum(list(s[3063])))
 
-def find_min_r():
-    min_r = float('inf')
-    for n in range(1, 100):  # Пробуем числа от 1 до 99 (включительно)
-        ternary = to_ternary(n)
-        replaced = replace_digits(ternary)
-        no_leading_zeros = remove_leading_zeros(replaced)
-        reversed_ternary = reverse_string(no_leading_zeros)
-
-        digit_sum = sum_of_digits(ternary)
-        sum_ternary = to_ternary(digit_sum)
-
-        final_number = reversed_ternary + sum_ternary
-        r = int(final_number, 3)  # Преобразуем обратно в десятичную систему
-
-        if r < min_r:
-            min_r = r
-
-    return min_r
-
-# Получаем минимальное значение R
-min_R = find_min_r()
-print(min_R)
