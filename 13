@@ -1,2 +1,5 @@
-print(bin(145)[2:].zfill(8) + '.' + bin(92)[2:].zfill(8) + '.' + bin(137)[2:].zfill(8) + '.' + bin(88)[2:].zfill(8))
-print(bin(255)[2:].zfill(8) + '.' + bin(255)[2:].zfill(8) + '.' + bin(240)[2:].zfill(8) + '.' + bin(0)[2:].zfill(8))
+print(bin(149)[2:].zfill(8) + '.' + bin(238)[2:].zfill(8) + '.' + bin(225)[2:].zfill(8) + '.' + bin(115)[2:].zfill(8))
+print(bin(147)[2:].zfill(8) + '.' + bin(222)[2:].zfill(8) + '.' + bin(199)[2:].zfill(8) + '.' + bin(75)[2:].zfill(8))
+
+print(bin(218))
+print(int("11111000", 2))
