@@ -1,39 +1,32 @@
-'''Дана программа для Редактора:
+# 145.92.137.88
+# 10 -> 2
+# x=(bin(224))[2:].zfill(8)"."+(bin(92))[2:].zfill(8)+"."+(bin(137))[2:].zfill(8)+"."+(bin(88))[2:]\
+#       .zfill(8)
 
-НАЧАЛО
-ПОКА нашлось (11)
-    ЕСЛИ нашлось (112)
-        ТО заменить (112, 6)
-        ИНАЧЕ заменить (11, 3)
-КОНЕЦ ПОКА
-КОНЕЦ
+# print(x)
 
-Исходная строка содержит десять единиц и четыре двойки, других цифр нет, точный порядок расположения единиц и двоек 
-неизвестен. Какую наибольшую сумму цифр может иметь строка, при том что сумма цифр будет простым числом?
-'''
-from random import *
-from math import *
 
-def prost(n):
-    for i in range(2, int(sqrt(n))+1):           
-        if n%i==0:
-            return False
-    return True
+# 2 -> 10
 
-m = []
-for _ in range (1000):
-    f=10*"1"+4*"2"
-    s=list(f)
-    shuffle(s)
-    s="".join(s)
-    while "11" in s:
-        if "112" in s :
-            s = s.replace("112","6",1)
-        else:
-            s=s.replace("11","3",1)
-    su=s.count("6")*6+s.count("2")*2+s.count("3")*3+s.count("1")*1
-    if prost(su) == True:
-        m.append(su)
+# x = int('10000000', 2)
+# print(x)
 
-print(max(m))
-        
+# 
+
+c=0
+for x1 in '01':
+    for x2 in '01':
+        for x3 in '01':
+            for x4 in '01':
+                for x5 in '01':
+                    for x6 in '01':
+                        for x7 in '01':
+                            for x8 in '01':
+                                for x9 in '01':
+                                    for x10 in '01':
+                                        for x11 in '01':
+                                            ch = x1+x2+x3+x4+x5+x6+x7+x8+x9+x10+x11
+                                            if ch.count("1")!=2 and ch.count("1")!=7:
+                                                c+=1
+
+print(c)
