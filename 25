@@ -315,4 +315,3 @@ for g in range(101_000_000, 102_000_000):
     mas = f(g)
     if len(mas)==3:
         print(g)
-
