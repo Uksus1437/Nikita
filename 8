@@ -450,3 +450,34 @@ for i1 in "123456789ABCDEF":
                         if len(set(d))==4:
                             c+=1
 print(c)
+
+
+
+'''Григорий составляет буквенные последовательности путем перестановки букв из слова НОСОЧЕЧКИ.
+
+Сколько различных последовательностей может составить
+Григорий, если известно, что гласные и согласные буквы чередуются?
+
+{'НОСОЧЕЧКИ', 'НОСОЧЕЧКИ'}
+'''
+from itertools import *
+c=0
+p = list(permutations('НОСОЧЕЧКИ'))
+f=["".join(g) for g in p]
+
+st = set()
+
+for i in f:
+    o = i
+    o=o.replace("Н","*")
+    o=o.replace("С","*")
+    o=o.replace("Ч","*")
+    o=o.replace("К","*")
+    o=o.replace("О","!")
+    o=o.replace("Е","!")
+    o=o.replace("И","!")
+    if o.count("!!")==0 and o.count("**")==0:
+        st.add(i)
+
+
+print(len(st))
