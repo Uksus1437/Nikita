@@ -1,8 +1,21 @@
-# from itertools import *
+# ip = list(map(int, '172.16.168.0'.split('.')))
+# print(f'{bin(ip[0])[2:].zfill(8)}.{bin(ip[1])[2:].zfill(8)}.{bin(ip[2])[2:].zfill(8)}.{bin(ip[3])[2:].zfill(8)}')
 
-# tq="235 145 146 2367 1267 345 45".split()
-# p="ED EC EF CF CE CG GC GB GA GD BF FA AD".split()
-# print(*range(1,8))
-# for var in permutations("EDCGBFA"):
-#     if all(str(var.index(x)+1) in tq[var.index(y)] for x, y in p):
-#         print(*var)
+
+# ip = list(map(int, '255.255.248.0'.split('.')))
+# print(f'{bin(ip[0])[2:].zfill(8)}.{bin(ip[1])[2:].zfill(8)}.{bin(ip[2])[2:].zfill(8)}.{bin(ip[3])[2:].zfill(8)}')
+
+# [('1', '0', '1'), '0']
+
+
+
+from itertools import*
+z=product("01",repeat=11)
+c=0
+for i in z:
+    if i.count("1")!=2 and i.count("1")!=7:
+        c+=1
+    print(c)
+
+
+
