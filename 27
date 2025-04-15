@@ -68,3 +68,7 @@ for x in range(len(a)):
         ost.append(abs(x1-x2))
         
 print(sum(qw) - min(ost), (sum(qw) - min(ost))%3)
+
+
+
+
